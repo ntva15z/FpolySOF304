@@ -23,9 +23,13 @@ public class CaculatorTest {
     }
 
     @Test
-    public void divideTestBvalueZero() throws Exception {
+    public void divideTestBvalueZero()  {
         Caculator caculator = new Caculator();
-        Assert.assertEquals("wrong",caculator.divide(8,0));
+        try {
+            double kq = caculator.divide(8,0);
+        }catch (Exception e){
+            Assert.assertEquals("wrong",e.getMessage());
+        }
     }
     @Test
     public void divideTest() throws Exception {
